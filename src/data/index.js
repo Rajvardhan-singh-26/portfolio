@@ -1,5 +1,5 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import { SiPython, SiCplusplus, SiPytorch, SiTensorflow, SiScikitlearn, SiOpencv, SiReact, SiNodedotjs, SiGooglecloud, SiOverleaf } from 'react-icons/si';
+import { SiPython, SiCplusplus, SiPytorch, SiTensorflow, SiScikitlearn, SiOpencv, SiReact, SiNodedotjs, SiGooglecloud, SiOverleaf, SiResearchgate } from 'react-icons/si';
 
 export const personalDetails = {
   name: "Rajvardhan Singh Bhadauriya",
@@ -11,6 +11,7 @@ export const personalDetails = {
     { icon: FaGithub, link: "https://github.com/Rajvardhan-singh-26" },
     { icon: FaLinkedin, link: "https://linkedin.com/in/rajvardhan-singh-bhadauriya-b239691a0" },
     { icon: FaEnvelope, link: "mailto:rajhb217@gmail.com" },
+    { icon: SiResearchgate, link: "https://www.researchgate.net/profile/Rajvardhan-Bhadauriya" },
   ]
 };
 
