@@ -72,6 +72,7 @@ export const research = [
     publication: "IEEE SENNET 2025",
     role: "Researcher & Presenter",
     description: "NLP-driven sentiment analysis & emotional intelligence metrics for workplace mental health.",
+    link: "https://ieeexplore.ieee.org/abstract/document/11135960",
   }
 ];
 
