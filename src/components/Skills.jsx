@@ -6,14 +6,17 @@ const SkillCard = ({ title, items }) => (
         <h3 className="text-2xl font-bold mb-6 text-blue-400">{title}</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {items.map((skill, idx) => (
-                <motion.div
+                <motion.a
                     key={idx}
+                    href={skill.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.05, backgroundColor: '#262626' }}
-                    className="bg-card-bg p-4 rounded-xl border border-gray-800 flex flex-col items-center justify-center gap-3 transition-colors cursor-pointer"
+                    className="bg-card-bg p-4 rounded-xl border border-gray-800 flex flex-col items-center justify-center gap-3 transition-colors cursor-pointer block"
                 >
                     {skill.icon && <skill.icon className="text-3xl text-gray-300" />}
                     <span className="font-medium text-gray-300">{skill.name}</span>
-                </motion.div>
+                </motion.a>
             ))}
         </div>
     </div>

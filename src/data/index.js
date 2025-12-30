@@ -16,29 +16,29 @@ export const personalDetails = {
 
 export const skills = {
   programming: [
-    { name: "C++", icon: SiCplusplus },
-    { name: "Python", icon: SiPython },
-    { name: "SQL", icon: null }, // Generic database icon or plain text
+    { name: "C++", icon: SiCplusplus, link: "https://en.cppreference.com/w/" },
+    { name: "Python", icon: SiPython, link: "https://docs.python.org/3/" },
+    { name: "SQL", icon: null, link: "https://dev.mysql.com/doc/" },
   ],
   ai_ml: [
-    { name: "PyTorch", icon: SiPytorch },
-    { name: "TensorFlow", icon: SiTensorflow },
-    { name: "scikit-learn", icon: SiScikitlearn },
-    { name: "OpenCV", icon: SiOpencv },
-    { name: "ViT", icon: null },
-    { name: "GPT", icon: null },
-    { name: "RAG", icon: null },
+    { name: "PyTorch", icon: SiPytorch, link: "https://pytorch.org/docs/stable/index.html" },
+    { name: "TensorFlow", icon: SiTensorflow, link: "https://www.tensorflow.org/api_docs" },
+    { name: "scikit-learn", icon: SiScikitlearn, link: "https://scikit-learn.org/stable/user_guide.html" },
+    { name: "OpenCV", icon: SiOpencv, link: "https://docs.opencv.org/" },
+    { name: "ViT", icon: null, link: "https://huggingface.co/docs/transformers/model_doc/vit" },
+    { name: "GPT", icon: null, link: "https://platform.openai.com/docs/introduction" },
+    { name: "RAG", icon: null, link: "https://python.langchain.com/docs/use_cases/question_answering/" },
   ],
   web: [
-    { name: "React", icon: SiReact },
-    { name: "Node.js", icon: SiNodedotjs },
-    { name: "HTML/CSS/JS", icon: null },
+    { name: "React", icon: SiReact, link: "https://react.dev/" },
+    { name: "Node.js", icon: SiNodedotjs, link: "https://nodejs.org/en/docs/" },
+    { name: "HTML/CSS/JS", icon: null, link: "https://developer.mozilla.org/en-US/docs/Web" },
   ],
   tools: [
-    { name: "Power BI", icon: null },
-    { name: "GCP", icon: SiGooglecloud },
-    { name: "Overleaf", icon: SiOverleaf },
-    { name: "Excel", icon: null },
+    { name: "Power BI", icon: null, link: "https://learn.microsoft.com/en-us/power-bi/" },
+    { name: "GCP", icon: SiGooglecloud, link: "https://cloud.google.com/docs" },
+    { name: "Overleaf", icon: SiOverleaf, link: "https://www.overleaf.com/learn" },
+    { name: "Excel", icon: null, link: "https://support.microsoft.com/en-us/excel" },
   ]
 };
 
