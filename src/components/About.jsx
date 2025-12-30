@@ -54,6 +54,9 @@ const About = () => {
                             <span className="px-4 py-2 bg-purple-500/30 rounded-full text-purple-100 text-sm font-bold border border-purple-400/30">
                                 🧠 AI Researcher
                             </span>
+                            <span className="px-4 py-2 bg-teal-500/30 rounded-full text-teal-100 text-sm font-bold border border-teal-400/30">
+                                🤖 AI/ML Engineering
+                            </span>
                             <span className="px-4 py-2 bg-cyan-500/30 rounded-full text-cyan-100 text-sm font-bold border border-cyan-400/30">
                                 🎓 UPES Dehradun
                             </span>
