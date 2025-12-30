@@ -11,7 +11,7 @@ const Navbar = () => {
             <motion.nav
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
-                className="hidden md:flex fixed top-6 left-1/2 -translate-x-1/2 bg-white/80 backdrop-blur-md px-8 py-3 rounded-full shadow-2xl z-50 items-center gap-8 border border-white/50"
+                className="hidden md:flex fixed top-6 right-10 bg-white/80 backdrop-blur-md px-8 py-3 rounded-full shadow-2xl z-50 items-center gap-8 border border-white/50"
             >
                 <a href="#" className="font-black text-xl text-slate-800 tracking-tighter hover:scale-105 transition-transform">
                     RSB.
