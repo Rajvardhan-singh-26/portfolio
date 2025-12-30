@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  /* Layer 1: Sky */
+  --bg-sky-top: #87CEEB;
+  --bg-sky-bottom: #E0F6FF;
+
+  /* Layer 2: Ocean */
+  --bg-ocean-top: #006994;
+  --bg-ocean-bottom: #001e36;
+
+  /* Layer 3: Earth */
+  --bg-earth-top: #4a3728;
+  --bg-earth-bottom: #2a1f18;
+
+  --text-primary: #1a1a1a;
+  --text-white: #ffffff;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+  background: var(--bg-sky-top);
+  /* Fallback */
+}
+
+/* Smooth layer transitions can be handled in React components or here */
+.layer-sky {
+  background: linear-gradient(180deg, var(--bg-sky-top) 0%, var(--bg-sky-bottom) 100%);
+  color: var(--text-primary);
+}
+
+.layer-ocean {
+  background: linear-gradient(180deg, var(--bg-ocean-top) 0%, var(--bg-ocean-bottom) 100%);
+  color: var(--text-white);
+}
+
+.layer-earth {
+  background: linear-gradient(180deg, var(--bg-earth-top) 0%, var(--bg-earth-bottom) 100%);
+  color: var(--text-white);
+}
+
+.card-gamified {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 shadow-xl hover:scale-105 transition-transform duration-300;
+}
+
+.nav-pill {
+  @apply fixed top-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-8 py-4 rounded-full shadow-2xl z-50 flex items-center gap-8 text-sm font-bold border border-white/50 text-slate-800;
+}
