@@ -11,15 +11,31 @@ const Contact = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('Sending...');
-        // Simulate send
-        setTimeout(() => {
-            setStatus('Message Sent! 🚀');
-            setFormData({ name: '', email: '', message: '' });
-            setTimeout(() => setStatus(''), 2000);
-        }, 1500);
+
+        try {
+            const response = await fetch("https://formspree.io/f/xnjqkpyb", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                setStatus('Message Sent! 🚀');
+                setFormData({ name: '', email: '', message: '' });
+                setTimeout(() => setStatus(''), 3000);
+            } else {
+                setStatus('Error sending message.');
+                setTimeout(() => setStatus(''), 3000);
+            }
+        } catch (error) {
+            setStatus('Error sending message.');
+            setTimeout(() => setStatus(''), 3000);
+        }
     };
 
     return (
