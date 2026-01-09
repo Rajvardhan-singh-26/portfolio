@@ -5,30 +5,35 @@ import Socials from './Socials';
 import profileImg from '../assets/profile.jpeg';
 
 const Hero = () => {
-  const canvasRef = useRef(null);
+  const canvasRefs = useRef([]);
+  const GRID_SIZE = 5; // 5x5 grid = 25 tiles
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (canvas) {
-      const ctx = canvas.getContext('2d');
-      const img = new Image();
-      img.src = profileImg;
+    const img = new Image();
+    img.src = profileImg;
 
-      img.onload = () => {
-        // Set canvas resolution to match display size for sharpness
-        canvas.width = 500; // refined resolution
-        canvas.height = 500;
+    img.onload = () => {
+      const tileWidth = img.width / GRID_SIZE;
+      const tileHeight = img.height / GRID_SIZE;
 
-        // Circular clipping region
-        ctx.beginPath();
-        ctx.arc(250, 250, 250, 0, Math.PI * 2, true);
-        ctx.closePath();
-        ctx.clip();
+      canvasRefs.current.forEach((canvas, index) => {
+        if (!canvas) return;
 
-        // Draw image
-        ctx.drawImage(img, 0, 0, 500, 500);
-      };
-    }
+        const ctx = canvas.getContext('2d');
+        const row = Math.floor(index / GRID_SIZE);
+        const col = index % GRID_SIZE;
+
+        // Set high resolution for sharpness
+        canvas.width = 100; // Arbitrary high res tile size
+        canvas.height = 100;
+
+        ctx.drawImage(
+          img,
+          col * tileWidth, row * tileHeight, tileWidth, tileHeight, // Source slice
+          0, 0, canvas.width, canvas.height // Destination
+        );
+      });
+    };
   }, []);
 
   return (
@@ -81,13 +86,18 @@ const Hero = () => {
         className="relative mt-12 z-10"
       >
         <div className="absolute inset-0 bg-white/50 blur-[60px] rounded-full scale-150"></div>
-        <div className="relative group w-48 h-48 md:w-64 md:h-64">
-          <canvas
-            ref={canvasRef}
-            className="w-full h-full rounded-full border-8 border-white shadow-2xl skew-y-0 pointer-events-none select-none"
-            role="img"
-            aria-label="Profile Picture"
-          />
+        <div className="relative group w-48 h-48 md:w-64 md:h-64 rounded-full border-8 border-white shadow-2xl skew-y-0 overflow-hidden bg-slate-200">
+          {/* Mosaic Grid */}
+          <div className="w-full h-full grid grid-cols-5 grid-rows-5 pointer-events-none select-none">
+            {[...Array(GRID_SIZE * GRID_SIZE)].map((_, i) => (
+              <canvas
+                key={i}
+                ref={el => canvasRefs.current[i] = el}
+                className="w-full h-full block"
+              />
+            ))}
+          </div>
+
           {/* Transparent Protection Overlay */}
           <div className="absolute inset-0 z-20 rounded-full bg-transparent" aria-hidden="true"></div>
         </div>
