@@ -57,6 +57,7 @@ export const projects = [
     tech: ["NLP", "React", "Slack Integration"],
     description: "NLP system trained on 30K+ Reddit posts to classify 27 emotion classes.",
     stats: "F1-score: 0.87",
+    githubLink: "https://github.com/medhavaid12/Minor_Project_2",
   },
   {
     title: "Nutri Care – Personalized Food Recommendation",
@@ -64,6 +65,7 @@ export const projects = [
     tech: ["C++", "DSA", "Web"],
     description: "Personalized food recommendation system using hash maps, tries, and graphs on 300+ patient datasets.",
     stats: "40% faster retrieval",
+    githubLink: "https://github.com/Rajvardhan-singh-26/minorproject1",
   },
 ];
 
